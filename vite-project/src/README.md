@@ -23,3 +23,9 @@
     - Implement a way to change the background color.
     - Implement a way to use a button to change the background color.
     - Implement a way to use a component to change the background color.
+
+  #5 Use useEffect to fetch and display a joke from an API when a button is clicked.
+    - Implement a way to use useEffect.
+    - Implement a way to fetch a joke from an API.
+    - Implement a way to display a joke from an API.
+    - Implement a way to use a button to fetch a joke from an API.
