@@ -18,3 +18,8 @@
     - Implement a way to increase the counter.
     - Implement a way to decrease the counter.
     - Implement a way to use buttons to increase and decrease the counter.
+
+  #4 Build a component that changes the background color every time a button is clicked.
+    - Implement a way to change the background color.
+    - Implement a way to use a button to change the background color.
+    - Implement a way to use a component to change the background color.
