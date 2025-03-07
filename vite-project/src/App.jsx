@@ -1,75 +1,38 @@
-import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
 
-function App() {
-  // const [count, setCount] = useState(0)
+const Counter = () => {
+  // Initializing state with 0
+  const [count, setCount] = useState(0);
 
-  const items = [
-    {
-      id: 1,
-      name: "Laptop",
-      category: "Electronics",
-      price: 1200,
-      stock: 10
-    },
-    {
-      id: 2,
-      name: "Smartphone",
-      category: "Electronics",
-      price: 800,
-      stock: 25
-    },
-    {
-      id: 3,
-      name: "Desk Chair",
-      category: "Furniture",
-      price: 150,
-      stock: 5
-    },
-    {
-      id: 4,
-      name: "Notebook",
-      category: "Stationery",
-      price: 5,
-      stock: 100
-    },
-    {
-      id: 5,
-      name: "Headphones",
-      category: "Electronics",
-      price: 200,
-      stock: 15
-    }
-  ];
-  
+  // Function to increase the counter
+  const increase = () => {
+    setCount(count + 1);
+  };
+
+  // Function to decrease the counter
+  const decrease = () => {
+    setCount(count - 1);
+  };
 
   return (
-    <>
-    <div>
-      <h1>Items</h1>
-      <ul>
-        {items.map((items) => (
-          <li key={items.id}>
-            <h2>{items.name}</h2>
-            <p>Category: {items.category}</p>
-            <p>Price: ${items.price}</p>
-            <p>Stock: {items.stock}</p>
-          </li>
-        ))}
-      </ul>
-      <div>
-        <h2>Filter by Category</h2>
-        <select onChange={()}>
-          <option value="all">Electronics</option>
-          <option value="all">Furniture</option>
-          <option value="all">Stationery</option>
-        </select>
+    <div className="p-4 text-center">
+      <h1 className="text-3xl font-bold">Counter: {count}</h1>
+      <div className="mt-4">
+        <button
+          className="px-4 py-2 bg-blue-500 text-white rounded-md mr-2"
+          onClick={increase}
+        >
+          Increase
+        </button>
+        <button
+          className="px-4 py-2 bg-red-500 text-white rounded-md"
+          onClick={decrease}
+        >
+          Decrease
+        </button>
       </div>
     </div>
-    </>
-  )
-}
+  );
+};
 
-export default App
+export default Counter;
