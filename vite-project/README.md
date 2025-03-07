@@ -1,12 +1,31 @@
-# React + Vite
+1. Implement a Search filter for a list of Items in React.
+ - List of Items - DONE
+ - A way to interact with DOM/ Interact with the list of Items.- DONE
+ - Implement a way to list items. - DONE
+    - Implement a way to filter items.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+# 2. A react component that Uses UseEffect to Update the Document title.
+  - Implement a React component that uses useEffect to update the document title.
+    - Implement a way to update the document title.
+    - Implement a way to use useEffect.
+    - Implement a way to use React component.
+    - Implement a way to use the document title.
+    - Implement a way to update the document title.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+  #3 Create a counter using useState that increases and decreases when buttons are clicked.
+    - Implement a way to use useState.
+    - Implement a way to increase the counter.
+    - Implement a way to decrease the counter.
+    - Implement a way to use buttons to increase and decrease the counter.
 
-## Expanding the ESLint configuration
+  #4 Build a component that changes the background color every time a button is clicked.
+    - Implement a way to change the background color.
+    - Implement a way to use a button to change the background color.
+    - Implement a way to use a component to change the background color.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+  #5 Use useEffect to fetch and display a joke from an API when a button is clicked.
+    - Implement a way to use useEffect.
+    - Implement a way to fetch a joke from an API.
+    - Implement a way to display a joke from an API.
+    - Implement a way to use a button to fetch a joke from an API.
