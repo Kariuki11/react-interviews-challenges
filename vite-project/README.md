@@ -13,7 +13,7 @@
     - Implement a way to use the document title.
     - Implement a way to update the document title.
 
-  #3 Create a counter using useState that increases and decreases when buttons are clicked.
+#  3.  Create a counter using useState that increases and decreases when buttons are clicked.
     - Implement a way to use useState.
     - Implement a way to increase the counter.
     - Implement a way to decrease the counter.
