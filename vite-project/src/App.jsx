@@ -1,66 +1,41 @@
-import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
-const ChangeColor = () => {
+const JokeFetcher = () => {
+  const [joke, setJoke] = useState('');
+  const [fetchJoke, setFetchJoke] = useState(false);
 
-  const Colors = ['#f44336', '#2196f3', '#4caf50', '#ffeb3b', '#9c27b0', '#ff9800'];
-  const [bgColor, setBgColor] = useState('#ffffff');
-
-  const changeColor = () => {
-    const randomIndex = Math.floor(Math.random() * Colors.length);
-    setBgColor(Colors[randomIndex]);
+  const fetchJokeHandler = () => {
+    setFetchJoke(!fetchJoke);
   };
 
+  useEffect(() => {
+    const getJoke = async () => {
+      try {
+        const response = await axios.get('https://official-joke-api.appspot.com/random_joke');
+        setJoke(`${response.data.setup} - ${response.data.punchline}`);
+      } catch (error) {
+        setJoke('Failed to fetch joke 😢');
+      }
+    };
+
+    if (fetchJoke) {
+      getJoke();
+    }
+  }, [fetchJoke]);
+
   return (
-    <div>
-      <h1>Welcome to Our Official changing color site.</h1>
-      <div>
-        <button>
-          Change Color
-        </button>
-      </div>
+    <div className="min-h-screen flex flex-col justify-center items-center bg-gray-100 text-center">
+      <h1 className="text-3xl font-bold mb-6">Random Joke Generator 😂</h1>
+      <button
+        className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow-lg hover:bg-blue-500 transition duration-300"
+        onClick={fetchJokeHandler}
+      >
+        Get Joke
+      </button>
+      {joke && <p className="mt-6 text-xl text-gray-800">{joke}</p>}
     </div>
-  )
-}
+  );
+};
 
-export default ChangeColor
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import { useState } from 'react';
-
-// const ColorChanger = () => {
-//   const colors = ['#f44336', '#2196f3', '#4caf50', '#ffeb3b', '#9c27b0', '#ff9800'];
-//   const [bgColor, setBgColor] = useState('#ffffff');
-
-//   const changeColor = () => {
-//     const randomIndex = Math.floor(Math.random() * colors.length);
-//     setBgColor(colors[randomIndex]);
-//   };
-
-//   return (
-//     <div className="h-screen flex justify-center items-center" style={{ backgroundColor: bgColor }}>
-//       <button
-//         className="px-6 py-3 bg-gray-800 text-white rounded-lg shadow-lg hover:bg-gray-700 transition duration-300"
-//         onClick={changeColor}
-//       >
-//         Change Background Color
-//       </button>
-//     </div>
-//   );
-// };
-
-// export default ColorChanger;
+export default JokeFetcher;
