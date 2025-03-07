@@ -7,8 +7,7 @@ const ChangeColor = () => {
 
   const changeColor = () => {
     const randomIndex = Math.floor(Math.random() * Colors.length);
-    setBgColor(Colors
-      [randomIndex]);
+    setBgColor(Colors[randomIndex]);
   };
 
   return (
